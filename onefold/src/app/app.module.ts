@@ -3,7 +3,6 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 import { AccountPage } from '../pages/account/account';
 import { BudgetPage } from '../pages/budget/budget';
 import { CategoryPage } from '../pages/category/category';
@@ -17,7 +16,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
     AccountPage,
     BudgetPage,
     CategoryPage,
@@ -32,7 +30,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
     AccountPage,
     BudgetPage,
     CategoryPage,
