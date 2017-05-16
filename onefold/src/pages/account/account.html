@@ -17,14 +17,14 @@
   <ion-list>
     <ion-item>
       <h2>Balance</h2>
-      <p item-right></p>
+      <p item-right>{{balance | currency:'IDR'}}</p>
     </ion-item>
   </ion-list>
   <!-- instrument-->
   <ion-list>
     <ion-item *ngFor="let item of instrumentCollection">
       <h2> {{item.name}}</h2>
-      <p item-right>{{calculateInstrument(item.value) | currency:'IDR'}}</p>
+      <p item-right>{{calculateInstrument(item.value) | currency:'IDR'}} <button ion-button><ion-icon name="add"></ion-icon></button></p>
     </ion-item>
   </ion-list>
   <ion-fab center bottom>

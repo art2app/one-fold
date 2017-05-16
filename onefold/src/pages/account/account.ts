@@ -30,6 +30,8 @@ export class AccountPage {
 
   balanceCollection : Balance[];
 
+  balance = 0;
+
   ngOnInit () {
     this.instrumentCollection = instrument;
     this.balanceCollection = balance;
