@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { Balance } from '../interface/balanceInterface';
+import { Instrument } from '../interface/instrumentInterface';
+import { Account } from '../interface/accountInterface';
+import instrument from '../data/instrumentdata';
+import balance from '../data/balancedata';
+import account from '../data/accountdata';
 /**
  * Generated class for the AccountPage page.
  *
@@ -20,4 +26,16 @@ export class AccountPage {
     console.log('ionViewDidLoad AccountPage');
   }
 
+  instrumentCollection : Instrument[];
+
+  balanceCollection : Balance[];
+
+  ngOnInit () {
+    this.instrumentCollection = instrument;
+    this.balanceCollection = balance;
+  }
+
+  calculateInstrument (key : string) {
+    return 0;
+  }
 }

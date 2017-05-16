@@ -8,11 +8,26 @@
 </ion-header>
 
 <ion-content padding>
-  <h1>Account</h1>
-  <ion-fab right bottom>
+  <ion-list>
+    <ion-item *ngFor="let item of balanceCollection">
+      <h2>{{item.name}}</h2>
+      <p item-right>{{item.nominal | currency:'IDR'}}</p>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <h2>Balance</h2>
+      <p item-right></p>
+    </ion-item>
+  </ion-list>
+  <!-- instrument-->
+  <ion-list>
+    <ion-item *ngFor="let item of instrumentCollection">
+      <h2> {{item.name}}</h2>
+      <p item-right>{{calculateInstrument(item.value) | currency:'IDR'}}</p>
+    </ion-item>
+  </ion-list>
+  <ion-fab center bottom>
     <button ion-fab color="light"><ion-icon name="add"></ion-icon></button>
-    <ion-fab-list side="left">
-      <button ion-fab><ion-icon name="calculator"></ion-icon></button>
-    </ion-fab-list>
   </ion-fab>
 </ion-content>
