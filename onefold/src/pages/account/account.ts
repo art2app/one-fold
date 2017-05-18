@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { RecordPage } from '../record/record';
+
 import { Balance } from '../interface/balanceInterface';
 import { Instrument } from '../interface/instrumentInterface';
-import { Account } from '../interface/accountInterface';
 import instrument from '../data/instrumentdata';
 import balance from '../data/balancedata';
-import account from '../data/accountdata';
 /**
  * Generated class for the AccountPage page.
  *
@@ -18,6 +18,8 @@ import account from '../data/accountdata';
   templateUrl: 'account.html',
 })
 export class AccountPage {
+
+  recordPage = RecordPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -40,4 +42,5 @@ export class AccountPage {
   calculateInstrument (key : string) {
     return 0;
   }
+
 }
