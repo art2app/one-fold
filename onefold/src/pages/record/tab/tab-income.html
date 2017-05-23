@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Income</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <h2>Amount</h2>
+      <p item-right>
+        {{ 0 | currency:'IDR'}}
+      </p>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <h2>Date</h2>
+      <p item-right>
+        {{ '2017-01-01' | date:'dd/MM-yyyy'}}
+      </p>
+    </ion-item>
+    <ion-item>
+      <h2>Account Type</h2>
+      <p item-right>
+       ##
+      </p>
+    </ion-item>
+    <ion-item>
+      <h2>Category</h2>
+      <p item-right>
+        ##
+      </p>
+    </ion-item>
+    <ion-item>
+      <h2>Periodic</h2>
+      <p item-right>
+        ##
+      </p>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label>Set Alert</ion-label>
+      <ion-checkbox color="orange"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <ion-fab center bottom>
+    <button ion-fab color="light"><ion-icon name="checkmark"></ion-icon></button>
+  </ion-fab>
+</ion-content>

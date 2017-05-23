@@ -4,12 +4,6 @@
 import { Component } from '@angular/core';
 
 @Component({
-  template: `
-  <ion-header>
-    <ion-navbar>
-      <ion-title>Heart</ion-title>
-    </ion-navbar>
-  </ion-header>
-  <ion-content>Expense</ion-content>`
+  templateUrl: "./tab/tab-expense.html"
 })
 export class TabExpense {}

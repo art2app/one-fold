@@ -13,11 +13,19 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class BudgetPage {
 
+  Budget :{name:string, nominal:number}[];
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BudgetPage');
+    this.Budget = [
+      {name: "Daily Budget", nominal:10000},
+      {name: "Weekly Budget", nominal:10000},
+      {name: "Monthly Budget", nominal:10000},
+      {name: "Yearly Budget", nominal:10000}
+    ];
   }
 
 }

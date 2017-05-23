@@ -10,6 +10,7 @@ import { ReportPage } from '../pages/report/report';
 import { RestorePage } from '../pages/restore/restore';
 import { SettingsPage } from '../pages/settings/settings';
 import { RecordPage } from '../pages/record/record';
+import { BalancePage } from '../pages/balance/balance';
 
 import { TabIncome } from '../pages/record/tab-income';
 import { TabExpense } from '../pages/record/tab-expense';
@@ -21,6 +22,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
+    BalancePage,
+    AccountPage,
     AccountPage,
     BudgetPage,
     CategoryPage,
@@ -39,6 +42,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    BalancePage,
     AccountPage,
     BudgetPage,
     CategoryPage,
