@@ -18,6 +18,7 @@ import { TabTransfer } from '../pages/record/tab-transfer';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ProgressbarComponent } from '../components/progressbar/progressbar';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RecordPage,
     TabIncome,
     TabExpense,
-    TabTransfer
+    TabTransfer,
+    ProgressbarComponent
   ],
   imports: [
     BrowserModule,

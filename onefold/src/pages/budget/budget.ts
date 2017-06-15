@@ -20,12 +20,6 @@ export class BudgetPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BudgetPage');
-    this.Budget = [
-      {name: "Daily Budget", nominal:10000},
-      {name: "Weekly Budget", nominal:10000},
-      {name: "Monthly Budget", nominal:10000},
-      {name: "Yearly Budget", nominal:10000}
-    ];
   }
 
 }
