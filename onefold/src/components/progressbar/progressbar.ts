@@ -14,6 +14,7 @@ import { NavController } from 'ionic-angular';
 export class ProgressbarComponent {
 
   @Input('progress') progress;
+  @Input('status') status;
 
   constructor(){
 

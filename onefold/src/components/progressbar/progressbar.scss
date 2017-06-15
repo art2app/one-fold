@@ -18,4 +18,13 @@ progressbar {
     border-radius: 20px;
     background-color: map-get($colors, primary);
   }
+  .progress-inner-success {
+    @extend .progress-inner;
+    background-color: #2ec95c;
+  }
+
+  .progress-inner-danger {
+    @extend .progress-inner;
+    background-color: #f53d3d;
+  }
 }

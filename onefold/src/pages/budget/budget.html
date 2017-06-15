@@ -9,21 +9,31 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Budget</ion-title>
+    <ion-title>Budget - Juni</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-  <ion-list>
-    <ion-item>
-      yo
-    </ion-item>
-    <ion-item>
-      <progressbar [progress]="5"></progressbar>
-    </ion-item>
+  <ion-list *ngIf="BudgetIncome.length>0" no-lines>
+    <ion-list-header>
+      Income
+    </ion-list-header>
+    <button ion-item click="null" *ngFor="let item of BudgetIncome">
+      <progressbar [status]="'plus'" [progress]="item.persen"></progressbar>
+      <p>{{item.name}} <small item-end>{{item.status?"("+item.status+")":""}}</small></p>
+    </button>
+  </ion-list>
+  <ion-list *ngIf="BudgetExpenses.length>0" no-lines>
+    <ion-list-header>
+      Expense
+    </ion-list-header>
+    <button ion-item click="null" *ngFor="let item of BudgetExpenses">
+      <progressbar [status]="'minus'" [progress]="item.persen"></progressbar>
+      <p>{{item.name}} <small item-end>{{item.status?"("+item.status+")":""}}</small></p>
+    </button>
   </ion-list>
   <ion-fab center bottom>
-    <button ion-fab color="light"><ion-icon name="checkmark"></ion-icon></button>
+    <button ion-fab color="light"><ion-icon name="md-add"></ion-icon></button>
   </ion-fab>
 </ion-content>

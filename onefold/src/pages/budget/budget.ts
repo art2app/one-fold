@@ -13,13 +13,24 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class BudgetPage {
 
-  Budget :{name:string, nominal:number}[];
+  BudgetIncome :{name:string, nominal:number, persen:number, status:string}[];
+  BudgetExpenses :{name:string, nominal:number, persen:number, status:string}[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.BudgetIncome = [
+      {name: "Gaji", nominal:10000000, persen:70, status:"month"}
+    ];
+    this.BudgetExpenses = [
+      {name: "Kosan", nominal:1000000, persen:10, status:"month"},
+      {name: "Makan", nominal:1000000, persen:10, status:"month"},
+      {name: "Kartu kredit", nominal:1000000, persen:50, status:"month"},
+      {name: "Bank STD Chart", nominal:2000000, persen:100, status:"month"}
+    ];
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BudgetPage');
+
   }
 
 }

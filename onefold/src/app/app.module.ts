@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
+import { HomePage } from '../pages/home/home';
 import { AccountPage } from '../pages/account/account';
 import { BudgetPage } from '../pages/budget/budget';
 import { CategoryPage } from '../pages/category/category';
@@ -10,7 +11,6 @@ import { ReportPage } from '../pages/report/report';
 import { RestorePage } from '../pages/restore/restore';
 import { SettingsPage } from '../pages/settings/settings';
 import { RecordPage } from '../pages/record/record';
-import { BalancePage } from '../pages/balance/balance';
 
 import { TabIncome } from '../pages/record/tab-income';
 import { TabExpense } from '../pages/record/tab-expense';
@@ -23,7 +23,7 @@ import { ProgressbarComponent } from '../components/progressbar/progressbar';
 @NgModule({
   declarations: [
     MyApp,
-    BalancePage,
+    HomePage,
     AccountPage,
     AccountPage,
     BudgetPage,
@@ -44,7 +44,7 @@ import { ProgressbarComponent } from '../components/progressbar/progressbar';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    BalancePage,
+    HomePage,
     AccountPage,
     BudgetPage,
     CategoryPage,

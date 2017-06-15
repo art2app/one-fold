@@ -1,6 +1,12 @@
 <!-- Generated template for the ProgressbarComponent component -->
 <div class="progress-outer">
-  <div class="progress-inner" [style.width]="progress + '%'">
+  <div *ngIf="progress<=70&&progress>30" class="progress-inner" [style.width]="progress + '%'">
+    {{progress}}%
+  </div>
+  <div *ngIf="progress>70" class="progress-inner-success" [style.width]="progress + '%'">
+    {{progress}}%
+  </div>
+  <div *ngIf="progress<30" class="progress-inner-danger" [style.width]="progress + '%'">
     {{progress}}%
   </div>
 </div>
