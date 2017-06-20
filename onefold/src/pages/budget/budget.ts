@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {NavController, NavParams } from 'ionic-angular';
 
+import sampleBudget from '../sample/sampleBudget';
+
 import { BudgetDetailPage } from '../budget-detail/budget-detail';
 /**
  * Generated class for the BudgetPage page.
@@ -16,18 +18,12 @@ export class BudgetPage {
 
   BudgetIncome :{name:string, nominal:number, persen:number, status:string}[];
   BudgetExpenses :{name:string, nominal:number, persen:number, status:string}[];
-  pushPage: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.BudgetIncome = [
       {name: "Gaji", nominal:10000000, persen:70, status:"month"}
     ];
-    this.BudgetExpenses = [
-      {name: "Kosan", nominal:1000000, persen:10, status:"month"},
-      {name: "Makan", nominal:1000000, persen:10, status:"month"},
-      {name: "Kartu kredit", nominal:1000000, persen:50, status:"month"},
-      {name: "Bank STD Chart", nominal:2000000, persen:100, status:"month"}
-    ];
+    this.BudgetExpenses = sampleBudget;
   }
 
   ionViewDidLoad() {
@@ -35,10 +31,11 @@ export class BudgetPage {
 
   }
 
-  clickDetail() {
+  clickDetail(item:any) {
     console.log("open budget detail");
+    console.log("item:", item);
     // this.pushPage = BudgetDetailPage;
-    this.navCtrl.push(BudgetDetailPage);
+    this.navCtrl.push(BudgetDetailPage, {data:item});
   }
 
 }

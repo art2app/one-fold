@@ -7,12 +7,50 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>budgetDetail</ion-title>
+    <ion-title>Budget Detail - {{name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-list>
+    <ion-item>
+      <progressbar [status]="'plus'" [progress]="persen"></progressbar>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Nominal</ion-label>
+      <ion-input type="number" placeholder="" [value]="nominal" readonly="true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button default ion-button (click)="OpenTrans($event)">
+        Open
+      </button>
 
+    </ion-item>
+  </ion-list>
+  <ion-list [ngStyle]="{'display': open===true?'':'none'}">
+    <ion-item>
+      <ion-label>From</ion-label>
+      <ion-select [(ngModel)]="from" (ngModelChange)="changeThis(from)">
+        <ion-option value="{{name}}">{{name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>To</ion-label>
+      <ion-select [(ngModel)]="to" (ngModelChange)="changeThis(to)">
+        <ion-option value="f">f</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Nominal allocation</ion-label>
+      <ion-input type="number" placeholder="" [value]="nominal"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button default ion-button>
+        Allocation
+        <ion-icon name="ios-cash-outline"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
 </ion-content>

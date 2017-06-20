@@ -19,7 +19,7 @@
     <ion-list-header>
       Income
     </ion-list-header>
-    <button ion-item (click)="clickDetail()" *ngFor="let item of BudgetIncome">
+    <button ion-item (click)="clickDetail(item)" *ngFor="let item of BudgetIncome">
       <progressbar [status]="'plus'" [progress]="item.persen"></progressbar>
       <p>{{item.name}} <small item-end>{{item.status?"("+item.status+")":""}}</small></p>
     </button>
@@ -28,7 +28,7 @@
     <ion-list-header>
       Expense
     </ion-list-header>
-    <button ion-item (click)="clickDetail()" *ngFor="let item of BudgetExpenses">
+    <button ion-item (click)="clickDetail(item)" *ngFor="let item of BudgetExpenses">
       <progressbar [status]="'minus'" [progress]="item.persen"></progressbar>
       <p>{{item.name}} <small item-end>{{item.status?"("+item.status+")":""}}</small></p>
     </button>

@@ -13,12 +13,34 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'budget-detail.html',
 })
 export class BudgetDetailPage {
+  public data:any;
+  public name:string;
+  public nominal:number;
+  public persen:number;
+
+  public open:boolean;
+  public from:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.data = navParams.get("data");
+    this.name = this.data.name;
+    this.nominal = this.data.nominal;
+    this.persen = this.data.persen;
+
+    this.open = false;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BudgetDetailPage');
+
   }
 
+  OpenTrans(event) {
+    console.log("open ",this.open);
+    this.open = !this.open;
+  }
+
+  changeThis(item) {
+    console.log("change ", item);
+  }
 }
