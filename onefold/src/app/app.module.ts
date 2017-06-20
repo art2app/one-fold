@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AccountPage } from '../pages/account/account';
 import { BudgetPage } from '../pages/budget/budget';
+import { BudgetDetailPage } from '../pages/budget-detail/budget-detail';
 import { CategoryPage } from '../pages/category/category';
 import { ReportPage } from '../pages/report/report';
 import { RestorePage } from '../pages/restore/restore';
@@ -35,7 +36,8 @@ import { ProgressbarComponent } from '../components/progressbar/progressbar';
     TabIncome,
     TabExpense,
     TabTransfer,
-    ProgressbarComponent
+    ProgressbarComponent,
+    BudgetDetailPage
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,8 @@ import { ProgressbarComponent } from '../components/progressbar/progressbar';
     RecordPage,
     TabIncome,
     TabExpense,
-    TabTransfer
+    TabTransfer,
+    BudgetDetailPage
   ],
   providers: [
     StatusBar,
