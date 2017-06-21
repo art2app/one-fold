@@ -4,6 +4,7 @@ import {NavController, NavParams } from 'ionic-angular';
 import sampleBudget from '../sample/sampleBudget';
 
 import { BudgetDetailPage } from '../budget-detail/budget-detail';
+import { BudgetAddFormPage } from '../budget-add-form/budget-add-form';
 /**
  * Generated class for the BudgetPage page.
  *
@@ -36,6 +37,10 @@ export class BudgetPage {
     console.log("item:", item);
     // this.pushPage = BudgetDetailPage;
     this.navCtrl.push(BudgetDetailPage, {data:item});
+  }
+
+  clickTambah() {
+    this.navCtrl.push(BudgetAddFormPage);
   }
 
 }

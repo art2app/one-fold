@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { AccountPage } from '../pages/account/account';
 import { BudgetPage } from '../pages/budget/budget';
 import { BudgetDetailPage } from '../pages/budget-detail/budget-detail';
+import { BudgetAddFormPage } from '../pages/budget-add-form/budget-add-form'
 import { CategoryPage } from '../pages/category/category';
 import { ReportPage } from '../pages/report/report';
 import { RestorePage } from '../pages/restore/restore';
@@ -37,7 +38,8 @@ import { ProgressbarComponent } from '../components/progressbar/progressbar';
     TabExpense,
     TabTransfer,
     ProgressbarComponent,
-    BudgetDetailPage
+    BudgetDetailPage,
+    BudgetAddFormPage
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { ProgressbarComponent } from '../components/progressbar/progressbar';
     TabIncome,
     TabExpense,
     TabTransfer,
-    BudgetDetailPage
+    BudgetDetailPage,
+    BudgetAddFormPage
   ],
   providers: [
     StatusBar,

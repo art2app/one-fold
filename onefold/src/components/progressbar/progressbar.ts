@@ -1,5 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, Input } from '@angular/core';
 
 /**
  * Generated class for the ProgressbarComponent component.
