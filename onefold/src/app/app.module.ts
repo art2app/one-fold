@@ -15,7 +15,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { RecordPage } from '../pages/record/record';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
-import { RegGroupPage } from '../pages/reg-group/reg-group'
+import { RegGroupPage } from '../pages/reg-group/reg-group';
 
 import { TabIncome } from '../pages/record/tab-income';
 import { TabExpense } from '../pages/record/tab-expense';
@@ -24,6 +24,13 @@ import { TabTransfer } from '../pages/record/tab-transfer';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ProgressbarComponent } from '../components/progressbar/progressbar';
+
+// Firebase Config
+import { AngularFireModule } from "angularfire2";
+import { firebaseConfig } from "../environment/firebaseconfig";
+import { AngularFireAuth } from 'angularfire2/auth';
+import { LogoutComponent } from '../components/logout/logout';
+
 
 @NgModule({
   declarations: [
@@ -45,11 +52,13 @@ import { ProgressbarComponent } from '../components/progressbar/progressbar';
     BudgetAddFormPage,
     LoginPage,
     SignupPage,
-    RegGroupPage
+    RegGroupPage,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -69,12 +78,14 @@ import { ProgressbarComponent } from '../components/progressbar/progressbar';
     BudgetAddFormPage,
     LoginPage,
     SignupPage,
-    RegGroupPage
+    RegGroupPage,
+    LogoutComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AngularFireAuth
   ]
 })
 export class AppModule {}

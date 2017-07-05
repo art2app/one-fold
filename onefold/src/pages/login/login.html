@@ -8,14 +8,26 @@
 
 <ion-content padding>
   <ion-list no-lines>
-    <ion-item>
-      <button ion-button (click)="login('google')">Login With Google</button>
-    </ion-item>
-    <ion-item>
-      <button ion-button (click)="login('facebook')">Login With Facebook</button>
-    </ion-item>
-    <ion-item>
-      <button ion-button (click)="signup()" small>Signup</button>
-    </ion-item>
+    <ion-list-header text-center>
+      <h1>One Fold</h1>
+    </ion-list-header>
+    <!--<ion-item>-->
+        <!--<ion-img (click)="login('google')"-->
+                 <!--width="60"-->
+                 <!--height="60"-->
+                 <!--src="../assets/img/google-btn.png"></ion-img>-->
+    <!--</ion-item>-->
+    <button ion-item (click)="login('google')" text-center>
+      <ion-img (click)="login('google')"
+               width="60"
+               height="60"
+               src="../assets/img/google-btn.png"></ion-img>
+    </button>
+    <!--<ion-item>-->
+      <!--<button ion-button (click)="login('facebook')">Login With Facebook</button>-->
+    <!--</ion-item>-->
+    <!--<ion-item>-->
+      <!--<button ion-button (click)="signup()" small>Signup</button>-->
+    <!--</ion-item>-->
   </ion-list>
 </ion-content>

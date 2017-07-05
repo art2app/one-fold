@@ -7,7 +7,7 @@ import { BudgetPage } from '../pages/budget/budget';
 import { ReportPage } from '../pages/report/report';
 import { SettingsPage } from '../pages/settings/settings';
 import { HomePage } from '../pages/home/home';
-import { LoginPage } from '../pages/login/login';
+import { LogoutComponent } from '../components/logout/logout';
 
 @Component({
   templateUrl: 'app.html'
@@ -28,6 +28,7 @@ export class MyApp {
       { title: 'Bugdet', component: BudgetPage },
       { title: 'Report', component: ReportPage },
       { title: 'Settings', component: SettingsPage },
+      { title: 'Logout', component: LogoutComponent }
     ];
 
     // this.navCtrl.push(LoginPage);
