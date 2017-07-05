@@ -24,7 +24,8 @@ export class LogoutComponent {
     // afAuth.authState.subscribe((user: firebase.User) => this.currentUser = user);
     afAuth.auth.signOut().then(() => {
       console.log("navCtrl :");
-      this.navCtrl.push(LoginPage);
+      // this.navCtrl.push(LoginPage);
+      this.navCtrl.popToRoot();
     });
   }
 
