@@ -29,7 +29,6 @@ import { ProgressbarComponent } from '../components/progressbar/progressbar';
 import { AngularFireModule } from "angularfire2";
 import { firebaseConfig } from "../environment/firebaseconfig";
 import { AngularFireAuth } from 'angularfire2/auth';
-import { LogoutComponent } from '../components/logout/logout';
 
 
 @NgModule({
@@ -52,8 +51,7 @@ import { LogoutComponent } from '../components/logout/logout';
     BudgetAddFormPage,
     LoginPage,
     SignupPage,
-    RegGroupPage,
-    LogoutComponent
+    RegGroupPage
   ],
   imports: [
     BrowserModule,
@@ -78,8 +76,7 @@ import { LogoutComponent } from '../components/logout/logout';
     BudgetAddFormPage,
     LoginPage,
     SignupPage,
-    RegGroupPage,
-    LogoutComponent
+    RegGroupPage
   ],
   providers: [
     StatusBar,

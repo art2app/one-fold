@@ -2,12 +2,13 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AngularFireAuth } from "angularfire2/auth"
 
 import { BudgetPage } from '../pages/budget/budget';
 import { ReportPage } from '../pages/report/report';
 import { SettingsPage } from '../pages/settings/settings';
 import { HomePage } from '../pages/home/home';
-import { LogoutComponent } from '../components/logout/logout';
+import { LoginPage } from "../pages/login/login";
 
 @Component({
   templateUrl: 'app.html'
@@ -19,7 +20,12 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen,
+    public afAuth: AngularFireAuth
+  ) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -28,10 +34,16 @@ export class MyApp {
       { title: 'Bugdet', component: BudgetPage },
       { title: 'Report', component: ReportPage },
       { title: 'Settings', component: SettingsPage },
-      { title: 'Logout', component: LogoutComponent }
     ];
 
     // this.navCtrl.push(LoginPage);
+  }
+
+  logout() {
+    this.afAuth.auth.signOut().then(() => {
+      // this.navCtrl.popToRoot();
+      this.nav.push(LoginPage);
+    });
   }
 
   initializeApp() {
