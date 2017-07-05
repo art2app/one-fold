@@ -13,6 +13,9 @@ import { ReportPage } from '../pages/report/report';
 import { RestorePage } from '../pages/restore/restore';
 import { SettingsPage } from '../pages/settings/settings';
 import { RecordPage } from '../pages/record/record';
+import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
+import { RegGroupPage } from '../pages/reg-group/reg-group'
 
 import { TabIncome } from '../pages/record/tab-income';
 import { TabExpense } from '../pages/record/tab-expense';
@@ -39,7 +42,10 @@ import { ProgressbarComponent } from '../components/progressbar/progressbar';
     TabTransfer,
     ProgressbarComponent,
     BudgetDetailPage,
-    BudgetAddFormPage
+    BudgetAddFormPage,
+    LoginPage,
+    SignupPage,
+    RegGroupPage
   ],
   imports: [
     BrowserModule,
@@ -60,7 +66,10 @@ import { ProgressbarComponent } from '../components/progressbar/progressbar';
     TabExpense,
     TabTransfer,
     BudgetDetailPage,
-    BudgetAddFormPage
+    BudgetAddFormPage,
+    LoginPage,
+    SignupPage,
+    RegGroupPage
   ],
   providers: [
     StatusBar,
