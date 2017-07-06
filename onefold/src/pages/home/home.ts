@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
+import { AngularFireAuth } from "angularfire2/auth";
+import * as firebase from 'firebase/app';
 
 /**
  * Generated class for the HomePage page.
@@ -15,8 +17,17 @@ import { LoginPage } from '../login/login';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.navCtrl.push(LoginPage);
+  private currentUser: firebase.User;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public afAuth: AngularFireAuth) {
+
+    afAuth.authState.subscribe((user: firebase.User) => {
+      this.currentUser = user;
+      console.log("this.currentUser: ", this.currentUser);
+      if (this.currentUser === null) {
+        this.navCtrl.push(LoginPage);
+      }
+    });
   }
 
   ionViewDidLoad() {
