@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import {NavController, NavParams } from 'ionic-angular';
 
 import sampleBudget from '../sample/sampleBudget';
@@ -17,7 +17,9 @@ import { BudgetAddFormPage } from '../budget-add-form/budget-add-form';
   templateUrl: 'budget.html',
 })
 export class BudgetPage {
-  items: FirebaseListObservable<any[]>;
+  // items:any;
+  // itemObj: FirebaseObjectObservable<any>;
+  items: FirebaseListObservable<any>;
 
   // BudgetIncome :{name:string, nominal:number, persen:number, status:string}[];
   // BudgetExpenses :{name:string, nominal:number, persen:number, status:string}[];
@@ -29,12 +31,16 @@ export class BudgetPage {
     // ];
     // this.BudgetExpenses = sampleBudget;
     this.items = db.list('categorize/arthurapple');
-
+    // this.itemObj = db.object('categorize/arthurapple', { preserveSnapshot: true });
+    // this.itemObj.subscribe(snapshot => {
+    //   console.log("key :", snapshot.key)
+    //   console.log("val :", snapshot.val());
+    //   this.items = snapshot.val();
+    // });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BudgetPage');
-
   }
 
   clickDetail(item:any) {

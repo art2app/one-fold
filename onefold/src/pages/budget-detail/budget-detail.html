@@ -22,35 +22,42 @@
       <ion-label stacked>Nominal</ion-label>
       <ion-input type="number" placeholder="" [value]="nominal" readonly="true"></ion-input>
     </ion-item>
+  </ion-list>
+  <ion-list>
     <ion-item>
-      <!--<button default ion-button (click)="OpenTrans($event)">-->
-        <!--Open-->
+      <ion-label>Desc</ion-label>
+      <ion-input type="text" [(ngModel)]="desc"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>nominal</ion-label>
+      <ion-input type="number" [(ngModel)]="nom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="save()">Save</button>
+    </ion-item>
+  </ion-list>
+  <!--<ion-list [ngStyle]="{'display': open===true?'':'none'}">-->
+    <!--<ion-item>-->
+      <!--<ion-label>From</ion-label>-->
+      <!--<ion-select [(ngModel)]="from" (ngModelChange)="changeThis(from)">-->
+        <!--<ion-option value="{{name}}">{{name}}</ion-option>-->
+      <!--</ion-select>-->
+    <!--</ion-item>-->
+    <!--<ion-item>-->
+      <!--<ion-label>To</ion-label>-->
+      <!--<ion-select [(ngModel)]="to" (ngModelChange)="changeThis(to)">-->
+        <!--<ion-option value="f">f</ion-option>-->
+      <!--</ion-select>-->
+    <!--</ion-item>-->
+    <!--<ion-item>-->
+      <!--<ion-label stacked>Nominal allocation</ion-label>-->
+      <!--<ion-input type="number" placeholder="" [value]="nominal"></ion-input>-->
+    <!--</ion-item>-->
+    <!--<ion-item>-->
+      <!--<button default ion-button>-->
+        <!--Allocation-->
+        <!--<ion-icon name="ios-cash-outline"></ion-icon>-->
       <!--</button>-->
-
-    </ion-item>
-  </ion-list>
-  <ion-list [ngStyle]="{'display': open===true?'':'none'}">
-    <ion-item>
-      <ion-label>From</ion-label>
-      <ion-select [(ngModel)]="from" (ngModelChange)="changeThis(from)">
-        <ion-option value="{{name}}">{{name}}</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label>To</ion-label>
-      <ion-select [(ngModel)]="to" (ngModelChange)="changeThis(to)">
-        <ion-option value="f">f</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>Nominal allocation</ion-label>
-      <ion-input type="number" placeholder="" [value]="nominal"></ion-input>
-    </ion-item>
-    <ion-item>
-      <button default ion-button>
-        Allocation
-        <ion-icon name="ios-cash-outline"></ion-icon>
-      </button>
-    </ion-item>
-  </ion-list>
+    <!--</ion-item>-->
+  <!--</ion-list>-->
 </ion-content>
