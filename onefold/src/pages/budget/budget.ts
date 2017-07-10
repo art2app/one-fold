@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import {NavController, NavParams } from 'ionic-angular';
 
 import sampleBudget from '../sample/sampleBudget';
@@ -16,15 +17,19 @@ import { BudgetAddFormPage } from '../budget-add-form/budget-add-form';
   templateUrl: 'budget.html',
 })
 export class BudgetPage {
+  items: FirebaseListObservable<any[]>;
 
-  BudgetIncome :{name:string, nominal:number, persen:number, status:string}[];
-  BudgetExpenses :{name:string, nominal:number, persen:number, status:string}[];
+  // BudgetIncome :{name:string, nominal:number, persen:number, status:string}[];
+  // BudgetExpenses :{name:string, nominal:number, persen:number, status:string}[];
+  Budget :{name:string, nominal:number, persen:number, status:string}[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.BudgetIncome = [
-      {name: "Gaji", nominal:10000000, persen:70, status:"month"}
-    ];
-    this.BudgetExpenses = sampleBudget;
+  constructor(public navCtrl: NavController, public navParams: NavParams, db: AngularFireDatabase) {
+    // this.Budget = [
+    //   {name: "Gaji", nominal:10000000, persen:70, status:"month"}
+    // ];
+    // this.BudgetExpenses = sampleBudget;
+    this.items = db.list('categorize/arthurapple');
+
   }
 
   ionViewDidLoad() {

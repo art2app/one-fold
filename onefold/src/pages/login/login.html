@@ -17,12 +17,21 @@
                  <!--height="60"-->
                  <!--src="../assets/img/google-btn.png"></ion-img>-->
     <!--</ion-item>-->
-    <button ion-item (click)="login('google')" text-center>
-      <ion-img (click)="login('google')"
-               width="60"
-               height="60"
-               src="../assets/img/google-btn.png"></ion-img>
-    </button>
+    <ion-item text-center>
+      <button ion-button (click)="login('google')">
+        Google
+      </button>
+    </ion-item>
+    <ion-item text-center>
+      <button ion-button (click)="loginWithoutAuth()">
+        Just Go
+      </button>
+    </ion-item>
+    <!--<button ion-item (click)="signup('google')" text-center>-->
+      <!--<ion-img width="60"-->
+               <!--height="60"-->
+               <!--src="../assets/img/google-btn.png"></ion-img>-->
+    <!--</button>-->
     <!--<ion-item>-->
       <!--<button ion-button (click)="login('facebook')">Login With Facebook</button>-->
     <!--</ion-item>-->

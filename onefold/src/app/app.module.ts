@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-
+import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
+
 import { HomePage } from '../pages/home/home';
 import { AccountPage } from '../pages/account/account';
 import { BudgetPage } from '../pages/budget/budget';
@@ -27,6 +28,8 @@ import { ProgressbarComponent } from '../components/progressbar/progressbar';
 
 // Firebase Config
 import { AngularFireModule } from "angularfire2";
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { firebaseConfig } from "../environment/firebaseconfig";
 import { AngularFireAuth } from 'angularfire2/auth';
 
@@ -56,7 +59,10 @@ import { AngularFireAuth } from 'angularfire2/auth';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
