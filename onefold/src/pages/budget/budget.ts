@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import {NavController, NavParams } from 'ionic-angular';
 
-import sampleBudget from '../sample/sampleBudget';
+// import sampleBudget from '../sample/sampleBudget';
 
 import { BudgetDetailPage } from '../budget-detail/budget-detail';
 import { BudgetAddFormPage } from '../budget-add-form/budget-add-form';
@@ -18,25 +18,51 @@ import { BudgetAddFormPage } from '../budget-add-form/budget-add-form';
 })
 export class BudgetPage {
   // items:any;
-  // itemObj: FirebaseObjectObservable<any>;
+  itemObj: FirebaseListObservable<any>;
   items: FirebaseListObservable<any>;
-
+  date = new Date();
+  val:object;
   // BudgetIncome :{name:string, nominal:number, persen:number, status:string}[];
   // BudgetExpenses :{name:string, nominal:number, persen:number, status:string}[];
-  Budget :{name:string, nominal:number, persen:number, status:string}[];
+  // Budget :{name:string, nominal:number, persen:number, status:string}[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, db: AngularFireDatabase) {
     // this.Budget = [
     //   {name: "Gaji", nominal:10000000, persen:70, status:"month"}
     // ];
     // this.BudgetExpenses = sampleBudget;
-    this.items = db.list('categorize/arthurapple');
+    // this.items = db.list('categorize/arthurapple');
     // this.itemObj = db.object('categorize/arthurapple', { preserveSnapshot: true });
     // this.itemObj.subscribe(snapshot => {
     //   console.log("key :", snapshot.key)
     //   console.log("val :", snapshot.val());
     //   this.items = snapshot.val();
     // });
+
+    this.items = db.list("budget/arthurapple/" + this.date.getFullYear() + "/" + (this.date.getMonth() + 1));
+    this.items.subscribe(snapshotsItem => {
+      console.log("snapshots items", snapshotsItem);
+      // snapshotsItem it is items
+      this.itemObj = db.list("categorize/arthurapple");
+      this.itemObj.subscribe(snapshotsCat => {
+        // snapshotsCat it is categorize
+        console.log("snapshots categorize ", snapshotsCat);
+        if (snapshotsItem.length === 0) {
+          snapshotsCat.forEach(val => {
+            val = {
+              name: val.name,
+              nominal: val.nominal,
+              persen: 0,
+              start: val.start,
+              status: val.status
+            };
+            this.items.push(val);
+          });
+        }
+      });
+    })
+    // console.log("this.items : ", this.items);
+    // this.itemObj = db.object("budget/arthurapple/" + this.date.getFullYear() + "/" + this.date.getMonth() + 1);
   }
 
   ionViewDidLoad() {
